@@ -3,6 +3,7 @@ import { routes } from "./routes";
 import { Suspense } from "react";
 import { ThemeProvider } from "./components/theme-provider";
 import { ClerkProvider } from "@clerk/clerk-react";
+import { LoadingUI } from "./components/loading-ui";
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -16,7 +17,7 @@ export default function App() {
     <>
       <ThemeProvider defaultTheme="light" storageKey="kou-blog-theme">
         <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<LoadingUI />}>
             <RouterProvider router={routes} />
           </Suspense>
         </ClerkProvider>

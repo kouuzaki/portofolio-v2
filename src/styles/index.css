@@ -6,6 +6,29 @@
   .cl-internal-180wb59{
     display: none;
   }
+
+
+
+.gradient-dot-line{
+  @apply dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.06] md:dark:bg-grid-white/[0.08] md:bg-grid-black/[0.2] relative
+}
+
+.gradient-dot-line-small{
+  @apply dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.03] md:dark:bg-grid-white/[0.02] md:bg-grid-black/[0.1] relative
+}
+.gradient-backdrop{
+  @apply absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]
+}
+
+.gradient-backdrop-small{
+  @apply absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_60%,black)]
+}
+
+
+.gradasi_color{
+  @apply absolute animate-pulse delay-100 rounded-lg blur-sm bg-gradient-to-br from-purple-700 via-gray-600 to-blue-600 to-80% inset-0
+}
+
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -77,4 +100,5 @@
     body {
       @apply bg-background text-foreground;
     }
+  
   }

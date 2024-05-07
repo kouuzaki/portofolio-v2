@@ -1,6 +1,13 @@
+import { NotFound } from "@/components/not-found";
 
 export default function About() {
   return (
-    <div>About</div>
-  )
+    <div>
+      <NotFound
+        message="The page is currently under development, please come back in some time."
+        statusTextCode="Service Unavailable 503"
+        mode="maintenance"
+      />
+    </div>
+  );
 }

@@ -11,9 +11,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { SignedIn, SignedOut, useAuth, useUser } from "@clerk/clerk-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function UserProfile() {
+  const navigate = useNavigate();
   const { signOut } = useAuth();
   const { user } = useUser();
 
@@ -45,13 +46,15 @@ export function UserProfile() {
               </Link>
             </SignedOut>
             <SignedIn>
-              <Link
-                to="/auth/sign-up"
-                onClick={() => signOut()}
+              <span
+                onClick={() => {
+                  signOut();
+                  navigate("/auth.sign-in");
+                }}
                 className="w-full"
               >
                 Sign out
-              </Link>
+              </span>
             </SignedIn>
           </DropdownMenuItem>
         </DropdownMenuContent>
