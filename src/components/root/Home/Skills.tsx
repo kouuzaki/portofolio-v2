@@ -30,7 +30,7 @@ export function Skills() {
               <div className="flex space-x-4">
                 <ICON.FaCheckCircle size={25} className="text-blue-500" />
                 <h1 className="font-semibold text-base">
-                  Have more than 2 years of experience
+                  Have more than 3 years of experience
                 </h1>
               </div>
               <div className="flex space-x-4">
